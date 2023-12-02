@@ -1,5 +1,7 @@
 package aoc2023.day1;
 
+import shared.Timings;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,7 +27,9 @@ public class Day1 {
     }
 
     public static void main(String[] args) throws IOException {
+        Timings.start();
         final File file = new File("src/aoc2023/day1/input.txt");
+        Timings.checkpoint("read file");
         int sum = 0;
 
         for (String line : Files.readAllLines(file.toPath())) {
@@ -50,5 +54,6 @@ public class Day1 {
         }
 
         System.out.println(sum);
+        Timings.stop();
     }
 }
